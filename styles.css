@@ -43,9 +43,9 @@ input, textarea {
 
 .resume-wrapper {
     display: flex;
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
-    margin: 30px;
+    margin: 0px;
     background-color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -147,86 +147,79 @@ h2 {
     margin-top: 20px; /* Adds space above the button */
 }
 
+#generate-button {
+    padding: 10px 20px; /* Adds padding for the button */
+    background-color: #4CAF50; /* Example background color */
+    color: white; /* Text color */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Adds rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 16px; /* Sets the font size */
+}
 
-/* Media Queries for smaller devices */
-@media (max-width: 768px) {
-    .form-buttons {
-        flex-direction: column;
+#generate-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .resume-wrapper {
+        flex-direction: row; /* Side-by-side layout for medium to large screens */
     }
 
-    .form-container, .resume-container {
-        width: 95%;
-        margin: 10px auto;
+    .sidebar {
+        flex: 0 0 30%; /* Sidebar takes 30% of the width */
+        text-align: left;
+    }
+
+    .content {
+        flex: 1; /* Content takes the remaining width */
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+     .sidebar {
+        flex: 0 0 30%; /* Sidebar takes 30% of the width */
+        text-align: left;
+    }
+    .skill-badge {
+        font-size: 0.8em; /* Smaller text size for badges on small screens */
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
+    .name {
+        font-size: 0.7em; /* Adjust name size on very small screens */
+    }
+    .sidebar {
+        flex: 0 0 30%; /* Sidebar takes 30% of the width */
+        text-align: left;
+    }
+    .contact {
+        font-size: 0.6em;
+    }
+
+    .profile-picture {
+        width: 80px;
+        
+    }
+        button {
+       
+        padding: 1px 2px;
+        font-size: 0.9em;
+    }
+
+    .resume-wrapper {
+       
+        width: 95%;
+        
+        margin: 5px;
     }
 
     h2 {
-        font-size: 1.2rem;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 12px;
-    }
-}
-
-/* Form and Resume Containers */
-.form-container,
-.resume-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="file"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Responsive Wrapper */
-.resume-wrapper {
-    display: flex;
-    flex-direction: column; /* Mobile-first: Stack vertically */
-}
-
-/* Media Queries for Tablets and Desktops */
-@media (min-width: 768px) {
-    .resume-wrapper {
-        flex-direction: row; /* Side-by-side layout */
-    }
-    .sidebar {
-        width: 30%;
-        padding: 20px;
-    }
-    .content {
-        width: 70%;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-container,
-    .resume-container {
-        width: 90%;
-    }
-
-    .resume-wrapper {
-        flex-direction: column; /* Stack content on small screens */
+        font-size: 0.9em;
     }
 }
